@@ -1,0 +1,55 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="AB4.TAX_BR_OD_CIAP_CREDIT_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="ciapDocReturn" sap:content-version="1">
+				<Key><PropertyRef Name="Bukrs"/><PropertyRef Name="Branch"/><PropertyRef Name="Uf"/><PropertyRef Name="PerApur"/><PropertyRef Name="Exercicio"/><PropertyRef Name="NumLcto"/></Key><Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Company Code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Branch" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Business Place"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Uf" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Region" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PerApur" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Period" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Exercicio" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Fiscal Year"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NumLcto" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Document Number"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="VlCred" Type="Edm.Decimal" Precision="16" Scale="3" sap:unicode="false" sap:label="Value" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="DtLcto" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Posting Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NfId" Type="Edm.String" MaxLength="16" sap:unicode="false" sap:label="Reference" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DtDoc" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Document Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="message" Type="Edm.String" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="xAB4xTAX_BR_C_CIAP_CREDITType" sap:label="CIAP - Credit invoice" sap:content-version="1">
+				<Key><PropertyRef Name="empresa"/><PropertyRef Name="filial"/><PropertyRef Name="uf"/><PropertyRef Name="periodo"/><PropertyRef Name="exercicio"/><PropertyRef Name="documentoContabil"/></Key><Property Name="empresa" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code"/><Property Name="filial" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Business Place"/><Property Name="uf" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:label="Vehicle Region"
+					sap:quickinfo="Region of Vehicle"/><Property Name="periodo" Type="Edm.String" Nullable="false" MaxLength="7" sap:display-format="NonNegative" sap:label="Period"
+					sap:quickinfo="Period (Month/Year)"/><Property Name="exercicio" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Fiscal Year"/><Property Name="documentoContabil" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase"
+					sap:label="Document Number" sap:quickinfo="Accounting Document Number"/><Property Name="valorCredito" Type="Edm.Decimal" Precision="16" Scale="3" sap:label="Net value" sap:quickinfo="Net Value"/><Property Name="dataLancamento" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Posting Date"
+					sap:quickinfo="Posting Date in the Document"/><Property Name="numeroNf" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Reference"
+					sap:quickinfo="Reference Document Number"/><Property Name="dataDocumento" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Document Date"
+					sap:quickinfo="Document Date in Document"/><Property Name="estornado" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Indicator" sap:quickinfo="General Flag"/><Property Name="numeroDocumentoEstornado" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Document Number"
+					sap:quickinfo="Accounting Document Number"/></EntityType>
+			<EntityContainer Name="AB4_TAX_BR_OD_CIAP_CREDIT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+				sap:supported-formats="atom json xlsx"><EntitySet Name="ciapDocReturnSet" EntityType="AB4.TAX_BR_OD_CIAP_CREDIT_SRV.ciapDocReturn" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="xAB4xTAX_BR_C_CIAP_CREDIT" EntityType="AB4.TAX_BR_OD_CIAP_CREDIT_SRV.xAB4xTAX_BR_C_CIAP_CREDITType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><FunctionImport Name="CiapIssueNf" ReturnType="Collection(AB4.TAX_BR_OD_CIAP_CREDIT_SRV.ciapDocReturn)" EntitySet="ciapDocReturnSet"
+				m:HttpMethod="GET"/></EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="AB4.TAX_BR_OD_CIAP_CREDIT_SRV.AB4_TAX_BR_OD_CIAP_CREDIT_SRV_Entities">
+				<Annotation Term="Aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Rollup" EnumMember="None"/></Record>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./ab4/TAX_BR_OD_CIAP_CREDIT_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./ab4/TAX_BR_OD_CIAP_CREDIT_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
